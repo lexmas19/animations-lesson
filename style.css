@@ -58,12 +58,101 @@
   border-radius: 50%;
   border-left-color: transparent;
   border-right-color: transparent;
+  animation: spinner 800ms linear infinite;
+  animation-direction: reverse;
 }
 
 @keyframes spinner {
   from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes inner_spinner {
+  from {
+    rotate: 0deg;
   }
 
   to {
   }
 }
+*/ .parent {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  gap: 5px;
+  margin: 150px 0 0 200px;
+}
+
+.bullet {
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+  border-radius: 50%;
+  animation: hop 3s linear infinite;
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.second {
+  animation-delay: 500ms;
+}
+.third {
+  animation-delay: 1s;
+}
+.fourth {
+  animation-delay: 1500ms;
+}
+
+.background {
+    width: 100px;
+    height: 300px;
+    background-color: black;
+    margin: 100px 0 0 100px;
+  }
+  
+  .light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.6);
+    animation: traffic_light 3s linear infinite;
+  }
+  
+  .green {
+    background-color: rgba(0, 128, 0, 0.6);
+    animation-delay: 2s;
+  }
+  .yellow {
+    background-color: rgba(255, 255, 0, 0.6);
+    animation-delay: 1s;
+  }
+  
+  @keyframes traffic_light {
+    0%,
+    40% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
